@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -f Dockerfile.dev -t hassanamin/docker-react .
+  
+script:
+  - docker run hassanamin/docker-react npm run test:travis
+  
+
